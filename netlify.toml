@@ -1,0 +1,17 @@
+
+# Build settings
+[build]
+  publish = "dist"
+  command = "npm run build"
+
+# Headers for all assets
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+
+# Redirects for SPA
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
